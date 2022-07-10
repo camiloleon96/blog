@@ -43,6 +43,13 @@ app.post('/posts/:id/comments', async (req,res) => {
     }
 });
 
+//event receiver (from the event bus)
+app.post('/events', (req, res) => {
+    console.group('Received Event: ', req.body.type);
+
+    res.send({});
+});
+
 app.listen(4001, () => {
     console.log('listening on 4001');
 })

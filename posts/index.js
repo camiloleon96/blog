@@ -38,6 +38,13 @@ app.post('/posts', async (req, res) => {
     
 });
 
+//event receiver (from the event bus)
+app.post('/events', (req, res) => {
+    console.group('Event received: ', req.body.type);
+
+    res.send({});
+});
+
 app.listen(4000, () => {
     console.log('listening on 4000');
 });
